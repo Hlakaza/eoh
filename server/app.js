@@ -33,14 +33,15 @@ app.post('/add', (req, res) => {
  });
 
 
-mongoose.Promise = global.Promise 
-mongoose.connect(config.liveDb, err => {
-    if (err) {
-        console.log(err)
-      } else {
-        console.log('Mongo is connected...')
-      }
-})
+ mongoose.Promise = global.Promise;  // gets rid of the mongoose promise deprecated warning
+ mongoose.connect(config.liveDb);
+ mongoose.connection.on('open', (err) => {
+   if (err) {
+     console.log(err);
+   } else {
+     console.log('Mongo is connected...');
+   }
+ });
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 module.exports = app;
