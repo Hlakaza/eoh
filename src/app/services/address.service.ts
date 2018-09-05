@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Headers, Http } from '@angular/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +11,11 @@ export class AddressService {
    * Getting addreses from the api
    */
   getAddresses() {
-    const url = `${this.baseUrl}posts`;
-    return this.http.get(url);
+    const url = `${this.baseUrl}`;
+    const headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.get(url, {headers: headers});
   }
+
  /**
   * Adding a new address
   * @param data address data

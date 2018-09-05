@@ -11,7 +11,7 @@
            <mat-form-field>
              <input type="text" name="AdressPostalCode" formControlName="AdressPostalCode" matInput placeholder="Adress Postal Code" />
            </mat-form-field>
-           <button (click)="addNew()" mat-raised-button color="secondary">Add</button>
+           <button [disabled]="!newAdressForm.valid" (click)="addNew()" mat-raised-button color="accent">Add</button>
       </form>
       <span *ngIf="showSuccess" class="text-green">Added</span>
     </mat-card-content>
