@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AddressService } from '../../services/address.service';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -7,7 +8,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AddComponent implements OnInit {
   newAdressForm: FormGroup;
-  constructor() { }
+  showSuccess = false;
+  constructor(private adress: AddressService ) { }
 
   ngOnInit() {
     this.newAdressForm = new FormGroup ({
@@ -16,7 +18,9 @@ export class AddComponent implements OnInit {
       AdressPostalCode: new FormControl(null, Validators.required),
   });
   }
-   add() {
-     
+   addNew() {
+      this.adress.add(this.newAdressForm.value).subscribe(res => {
+      this.showSuccess = true;
+      }, err => {console.log('error', err); });
    }
 }

@@ -18,8 +18,8 @@ export class AddressService {
   * Adding a new address
   * @param data address data
   */
-  add(data) {
+  add(adressData) {
      const url = `${this.baseUrl}add`;
-     return this.http.post(url, data);
+     return this.http.post(url, adressData);
   }
 }

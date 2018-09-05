@@ -11,7 +11,8 @@
            <mat-form-field>
              <input type="text" name="AdressPostalCode" formControlName="AdressPostalCode" matInput placeholder="Adress Postal Code" />
            </mat-form-field>
-           <button (click)="login(loginForm.value.email, loginForm.value.password)" mat-raised-button color="secondary">Add</button>
+           <button (click)="addNew()" mat-raised-button color="secondary">Add</button>
       </form>
+      <span *ngIf="showSuccess" class="text-green">Added</span>
     </mat-card-content>
   </mat-card>

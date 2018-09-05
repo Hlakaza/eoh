@@ -15,8 +15,10 @@ app.get('/addresses', (req, res) => {
 
 app.post('/add', (req, res) => {
    let data = req.body
-   const address = new Address(data)
-   address.save((err, res) => {
+   console.log(data)
+   const AdressDetails = new AdressDetails(data)
+   debugger
+   AdressDetails.save((err, res) => {
        if(err){
            console.log(err)
        }
