@@ -5,7 +5,7 @@ import { Headers, Http } from '@angular/http';
   providedIn: 'root'
 })
 export class AddressService {
-  baseUrl = 'http://localhost:3000/';
+  baseUrl = '/';
   constructor( private http: Http) { }
   /**
    * Getting addreses from the api
