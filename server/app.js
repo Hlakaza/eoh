@@ -42,6 +42,6 @@ app.post('/add', (req, res) => {
      console.log('Mongo is connected...');
    }
  });
-var distDir = __dirname + "/dist/";
+var distDir = __dirname + "/dist/eoh/";
 app.use(express.static(distDir));
 module.exports = app;

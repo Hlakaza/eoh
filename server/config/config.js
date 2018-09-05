@@ -3,6 +3,6 @@ module.exports = {
     'liveDb': 'mongodb://luckza:Maboe62263@ds245762.mlab.com:45762/adresses',
     'paths': {
         serverPath: '../server/app',
-        dist: '../dist',
+        dist: '../dist/eoh/',
     }
 };
