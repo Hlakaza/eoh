@@ -3,5 +3,6 @@ module.exports = {
     'liveDb': 'mongodb://localhost:27017/address',
     'paths': {
         serverPath: '../server/app',
+        dist: '../dist',
     }
 };

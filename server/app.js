@@ -1,4 +1,5 @@
 let express    = require('express')
+    path         = require('path'),
     cors       = require('cors')
     bodyParser = require('body-parser')
     mongoose   = require('mongoose')
@@ -6,35 +7,18 @@ let express    = require('express')
     config     = require('./config/config.js')  
     app        = express();
     Schema     = mongoose.Schema
-
+    serveStatic = require('serve-static');
 app.use(cors())
 app.use(bodyParser.json())
+
+/**
+ * Get angular project files
+ */
+app.use(serveStatic(path.join(__dirname,  config.paths.dist)))
 
 app.get('/', (req, res) => {
     res.send(req.body)
 })
-
-getSingleForm: (req, res) => {
-    if (req.user.role[0] === 'admin') {
-        Form.findById((req.params.id), function(err, form) {
-            if (err) {
-                return res.status(500).json({
-                    message: 'An error occured',
-                    err: err
-                });
-            }
-            if (!form) {
-                return res.status(404).json({
-                    title: 'No form found',
-                    error: { message: 'Form not found!' }
-                });
-            }
-            res.status(200).json({
-                obj: form
-            });
-        });
-    }
-},
 
 app.post('/add', (req, res) => {
     let userData = req.body;
@@ -44,7 +28,7 @@ app.post('/add', (req, res) => {
             console.log(err);
         }
      })
-     console.log(userData.AddressName, 'registered')
+     console.log(userData.AddressName, 'Added')
      res.sendStatus(200)
  });
 
@@ -57,4 +41,6 @@ mongoose.connect(config.localDb, err => {
         console.log('Mongo is connected...')
       }
 })
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 app.listen(3000);
