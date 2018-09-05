@@ -34,7 +34,7 @@ app.post('/add', (req, res) => {
 
 
 mongoose.Promise = global.Promise 
-mongoose.connect(config.localDb, err => {
+mongoose.connect(config.liveDb, err => {
     if (err) {
         console.log(err)
       } else {
