@@ -43,4 +43,4 @@ mongoose.connect(config.localDb, err => {
 })
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
-app.listen(3000);
+module.exports = app;

@@ -3,7 +3,7 @@
 /**
  *  dependencies.
  */
-let config = require('../server/config/config');
+let config = require('../server/config/config.js');
 
 let app = require(config.paths.serverPath);
 let debug = require('debug')('eoh:server');
