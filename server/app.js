@@ -46,7 +46,7 @@ app.post('/add', (req, res) => {
  * Connecting to mongo db
  */
  mongoose.Promise = global.Promise;  // gets rid of the mongoose promise deprecated warning
- mongoose.connect(config.localDb, { useNewUrlParser: true } );
+ mongoose.connect(config.liveDb, { useNewUrlParser: true } );
  mongoose.connection.on('open', (err) => {
    if (err) {
      console.log(err);
