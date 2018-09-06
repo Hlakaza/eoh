@@ -2,9 +2,38 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.3.
 
-## Development server
+## Installing Dependecies
+1. Clone this [repo https://github.com/Hlakaza/eoh.git](https://github.com/Hlakaza/eoh.git) from Git 
+2. Run `npm install` in your command line. 
+3. Run `npm start` to start the node server
+4. Open another terminal run `ng build --watch`
+5. Navigate to `http://localhost:3000/` to access the site.
+6. Navigate to `https://eoh.herokuapp.com/` to access the live site.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Prerequisites
+1. Node.js and NPM installed
+2. MongoDB installed and running
+3. Material design
+
+## Specs
+1. Add address details and save into a mongodb database.
+3. Angular (ReactiveForms) Error Handling for form inputs.
+4. Material design for frontend layout
+
+## Packages Used
+`Angular-cli v6.1.3`.
+`Angular v6.1.6`.
+`Angular material v6.4.7`.
+`Webpack`.
+`Node used in development v8.11.3`.
+`MongoDB v4`.
+`Mongoose v5.2.13`.
+`Express v4.16.3`.
+`cors v2.8.4`,
+`body-parser v1.18.3`.
+
+## Angular Development server 
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files but the back end will not work if this is used. 
 
 ## Code scaffolding
 
