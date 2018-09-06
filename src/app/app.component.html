@@ -1,7 +1,7 @@
 <mat-toolbar>
-     Adrress List
+    <a routerLink="/">Address Book</a> 
     <span style="flex: 1 1 auto"></span>
-    <button mat-raised-button color="primary" routerLink="add">Add</button>
+    <button mat-raised-button color="primary" (click)="openDialog()">Add</button>
 </mat-toolbar>
 <router-outlet></router-outlet>
 <app-addresses></app-addresses>

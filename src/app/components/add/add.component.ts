@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AddressService } from '../../services/address.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -9,18 +10,26 @@ import { AddressService } from '../../services/address.service';
 export class AddComponent implements OnInit {
   newAdressForm: FormGroup;
   showSuccess = false;
-  constructor(private adress: AddressService ) { }
+  error = false ;
+  addressDetailsList: any = [];
+  constructor(private adress: AddressService,
+              private router: Router) { }
 
   ngOnInit() {
     this.newAdressForm = new FormGroup ({
-      AddressName: new FormControl(null, Validators.required),
-      Address: new FormControl(null, Validators.required),
-      AdressPostalCode: new FormControl(null, Validators.required),
-  });
+      name: new FormControl(null, Validators.required),
+      phone: new FormControl(null, Validators.required),
+      email: new FormControl(null, Validators.required),
+      address: new FormControl(null, Validators.required)
+   });
   }
    addNew() {
-      this.adress.add(this.newAdressForm.value).subscribe(res => {
-      this.showSuccess = true;
-      }, err => {console.log('error', err); });
+     if (this.newAdressForm.valid) {
+        this.adress.add(this.newAdressForm.value).subscribe(res => {
+          this.showSuccess = true;
+          }, err => {console.log('error', err); });
+      } else {
+        this.error = true;
+      }
    }
 }

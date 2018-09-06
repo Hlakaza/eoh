@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule, MatFormFieldModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule, MatFormFieldModule, MatDialogModule } from '@angular/material';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -29,15 +29,21 @@ const routes = [
     MatButtonModule,
     NoopAnimationsModule,
     MatCardModule,
+    MatDialogModule,
     MatToolbarModule,
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
     RouterModule,
     RouterModule.forRoot(
-      routes
+      routes,
+      {onSameUrlNavigation: 'reload'}
     )
   ],
+
+  exports: [RouterModule],
+
+
   providers: [],
   bootstrap: [AppComponent]
 })

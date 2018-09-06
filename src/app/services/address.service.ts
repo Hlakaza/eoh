@@ -11,7 +11,7 @@ export class AddressService {
    * Getting addreses from the api
    */
   getAddresses() {
-    const url = `${this.baseUrl}`;
+    const url = `${this.baseUrl}list`;
     const headers = new Headers({'Content-Type': 'application/json'});
     return this.http.get(url, {headers: headers});
   }
