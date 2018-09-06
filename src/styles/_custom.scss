@@ -70,4 +70,8 @@ a {
     .mat-dialog-container .mat-card{
         width: 100%;
     }
+    .cdk-overlay-pane{
+        width: 100% !important;
+        max-width: 100% !important; 
+    }
 }
