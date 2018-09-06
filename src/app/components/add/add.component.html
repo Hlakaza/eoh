@@ -1,18 +1,30 @@
 <mat-card>
-    <mat-card-title><h4>Add new address</h4></mat-card-title>
-    <mat-card-content>
+    <button class="pull-right clearfix" mat-button [mat-dialog-close]="true"><b>X</b></button>
+    <mat-card-title>
+      <h4 *ngIf="!showSuccess">Add new address</h4>
+      <h4 class="text-green" *ngIf="showSuccess">Success</h4>
+    </mat-card-title>
+    <mat-card-content  *ngIf="!showSuccess">
       <form [formGroup]="newAdressForm">
            <mat-form-field>
-             <input type="text" name="AddressName" formControlName="AddressName" matInput placeholder="Address Name"/>
+             <input type="text" name="name" formControlName="name" matInput placeholder="Full Name"/>
            </mat-form-field>
            <mat-form-field>
-             <input type="text" name="Address" formControlName="Address" matInput placeholder="Address" />
+             <input type="number" name="phone" formControlName="phone" matInput placeholder="Contact Number" />
            </mat-form-field>
            <mat-form-field>
-             <input type="text" name="AdressPostalCode" formControlName="AdressPostalCode" matInput placeholder="Adress Postal Code" />
+             <input type="email" name="phone" formControlName="email" matInput placeholder="Contact Email" />
+           </mat-form-field>
+           <mat-form-field>
+             <input type="text" name="address" formControlName="address" matInput placeholder="Address" />
            </mat-form-field>
            <button [disabled]="!newAdressForm.valid" (click)="addNew()" mat-raised-button color="accent">Add</button>
       </form>
-      <span *ngIf="showSuccess" class="text-green">Added</span>
     </mat-card-content>
+  </mat-card>
+  <mat-card *ngIf="showSuccess" class="alert-success">
+     Address details Added
+  </mat-card>
+  <mat-card *ngIf="error" class="alert-danger">
+     There was an error, please check if you completed all fields
   </mat-card>

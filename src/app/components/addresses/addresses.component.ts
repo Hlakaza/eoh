@@ -7,15 +7,21 @@ import { AddressService } from '../../services/address.service';
   styleUrls: ['./addresses.component.scss']
 })
 export class AddressesComponent implements OnInit {
-  addressDetails: any = [];
-  constructor( private address: AddressService) {}
+  addressDetailsList: any = [];
+
+  constructor( private address: AddressService) { }
 
   ngOnInit() {
-    this.address.getAddresses().subscribe(res => {
-      this.addressDetails = res;
-      console.log('adreesses', this.addressDetails);
-    }, err => {console.log('404', err); }
-  );
+    this.getDetails();
   }
 
+  getDetails() {
+    this.address.getAddresses().subscribe(res => {
+      this.addressDetailsList = JSON.parse(res['_body']);
+    },
+    err => {console.log(err); });
+    setTimeout(() => {
+     this.getDetails();
+    }, 1000);
+  }
 }

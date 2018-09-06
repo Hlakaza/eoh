@@ -16,10 +16,20 @@ app.use(bodyParser.json())
  */
 app.use(serveStatic(path.join(__dirname,  config.paths.dist)))
 
-app.get('/', (req, res) => {
-    res.send(req.body)
+app.get('/list', async (req, res) => {
+    try {
+        let addressDetails = await AdressDetails.find({})
+        res.send(addressDetails)
+        console.log('Addresses call succeded')
+        res.end()
+    } catch(error) {
+            console.log(error)
+            res.sendStatus(500)
+    }
 })
-
+/**
+ * Adding new Addres details
+ */
 app.post('/add', (req, res) => {
     let userData = req.body;
     const address = new AdressDetails(userData);
@@ -32,9 +42,11 @@ app.post('/add', (req, res) => {
      res.sendStatus(200)
  });
 
-
+/**
+ * Connecting to mongo db
+ */
  mongoose.Promise = global.Promise;  // gets rid of the mongoose promise deprecated warning
- mongoose.connect(config.liveDb);
+ mongoose.connect(config.liveDb, { useNewUrlParser: true } );
  mongoose.connection.on('open', (err) => {
    if (err) {
      console.log(err);
