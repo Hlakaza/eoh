@@ -27,7 +27,9 @@ app.get('/list', async (req, res) => {
             res.sendStatus(500)
     }
 })
-
+/**
+ * Adding new Addres details
+ */
 app.post('/add', (req, res) => {
     let userData = req.body;
     const address = new AdressDetails(userData);
@@ -40,9 +42,11 @@ app.post('/add', (req, res) => {
      res.sendStatus(200)
  });
 
-
+/**
+ * Connecting to mongo db
+ */
  mongoose.Promise = global.Promise;  // gets rid of the mongoose promise deprecated warning
- mongoose.connect(config.localDb, { useNewUrlParser: true } );
+ mongoose.connect(config.liveDb, { useNewUrlParser: true } );
  mongoose.connection.on('open', (err) => {
    if (err) {
      console.log(err);
