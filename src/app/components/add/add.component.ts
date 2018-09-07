@@ -11,7 +11,6 @@ export class AddComponent implements OnInit {
   newAdressForm: FormGroup;
   showSuccess = false;
   error = false ;
-  addressDetailsList: any = [];
   constructor(private adress: AddressService,
               private router: Router) { }
 
@@ -27,6 +26,9 @@ export class AddComponent implements OnInit {
      if (this.newAdressForm.valid) {
         this.adress.add(this.newAdressForm.value).subscribe(res => {
           this.showSuccess = true;
+          setTimeout(() => {
+            this.router.navigateByUrl('/');
+          }, 1000);
           }, err => {console.log('error', err); });
       } else {
         this.error = true;

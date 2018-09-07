@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\GIthub\eoh\src\styles.scss */"./src/styles.scss");
+module.exports = __webpack_require__(/*! D:\Github\eoh\src\styles.scss */"./src/styles.scss");
 
 
 /***/ })

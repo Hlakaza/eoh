@@ -7,18 +7,15 @@ import { MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule, MatFo
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { AddressesComponent } from './components/addresses/addresses.component';
 import { AddComponent } from './components/add/add.component';
 
 const routes = [
-  { path: 'list', component: AddressesComponent },
   { path: 'add', component: AddComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddressesComponent,
     AddComponent
   ],
 
