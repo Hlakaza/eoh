@@ -1,107 +1,139 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Eoh</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#3f51b5">
+  <meta name="msapplication-starturl" content="/?utm_source=homescreen">
+  <!-- iOS Safari -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Address Book">
+  <meta name="apple-mobile-web-app-title" content="AB">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#3f51b5">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/icon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/icon-72x72.png" />
+  <link rel="icon" sizes="192x192" href="/assets/icons/icon-192x192.png" />
+  <link rel="icon" sizes="144x144" href="/assets/icons/icon-144x144.png" />
+  <link rel="icon" sizes="72x72" href="/assets/icons/icon-72x72.png" />
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#3f51b5">
+  <meta name="theme-color" content="#3f51b5">
 </head>
 <style>
   .material_block {
-  width: 65px;
-  padding-top: 20%;
-  margin: auto;
-}
-
-.spinner
-{
-  -webkit-animation: rotation 1.35s linear infinite;
-  animation: rotation 1.35s linear infinite;
-}
-
-@-webkit-keyframes rotation
-{
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+    width: 65px;
+    padding-top: 20%;
+    margin: auto;
   }
 
-  100% {
-    -webkit-transform: rotate(270deg);
-    transform: rotate(270deg);
-  }
-}
-
-@keyframes rotation
-{
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+  .spinner {
+    -webkit-animation: rotation 1.35s linear infinite;
+    animation: rotation 1.35s linear infinite;
   }
 
-  100% {
-    -webkit-transform: rotate(270deg);
-    transform: rotate(270deg);
-  }
-}
+  @-webkit-keyframes rotation {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
 
-.circle
-{
-  stroke-dasharray: 180;
-  stroke-dashoffset: 0;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
-  -webkit-animation: turn 1.35s ease-in-out infinite;
-  animation: turn 1.35s ease-in-out infinite;
-}
-
-@-webkit-keyframes turn
-{
-  0% {
-    stroke-dashoffset: 180;
+    100% {
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg);
+    }
   }
 
-  50% {
-    stroke-dashoffset: 45;
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
+  @keyframes rotation {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg);
+    }
   }
 
-  100% {
-    stroke-dashoffset: 180;
-    -webkit-transform: rotate(450deg);
-    transform: rotate(450deg);
-  }
-}
-
-@keyframes turn
-{
-  0% {
-    stroke-dashoffset: 180;
+  .circle {
+    stroke-dasharray: 180;
+    stroke-dashoffset: 0;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+    -webkit-animation: turn 1.35s ease-in-out infinite;
+    animation: turn 1.35s ease-in-out infinite;
   }
 
-  50% {
-    stroke-dashoffset: 45;
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
+  @-webkit-keyframes turn {
+    0% {
+      stroke-dashoffset: 180;
+    }
+
+    50% {
+      stroke-dashoffset: 45;
+      -webkit-transform: rotate(135deg);
+      transform: rotate(135deg);
+    }
+
+    100% {
+      stroke-dashoffset: 180;
+      -webkit-transform: rotate(450deg);
+      transform: rotate(450deg);
+    }
   }
 
-  100% {
-    stroke-dashoffset: 180;
-    -webkit-transform: rotate(450deg);
-    transform: rotate(450deg);
+  @keyframes turn {
+    0% {
+      stroke-dashoffset: 180;
+    }
+
+    50% {
+      stroke-dashoffset: 45;
+      -webkit-transform: rotate(135deg);
+      transform: rotate(135deg);
+    }
+
+    100% {
+      stroke-dashoffset: 180;
+      -webkit-transform: rotate(450deg);
+      transform: rotate(450deg);
+    }
   }
-}
-svg:nth-child(1){stroke:#3f51b5;}
+
+  svg:nth-child(1) {
+    stroke: #3f51b5;
+  }
 </style>
+
 <body>
   <app-root>
     <div class="material_block">
-      <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="circle" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg> 
+      <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="circle" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+      </svg>
     </div>
   </app-root>
 <script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
+</script>
+<script>registerServiceWorker();
+  function registerServiceWorker() {
+    // register sw script in supporting browsers
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js', { scope: '/' }).then(() => {
+        console.log('Service Worker registered successfully.');
+      }).catch(error => {
+        console.log('Service Worker registration failed:', error);
+      });
+    }
+  }</script>
+
 </html>
