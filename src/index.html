@@ -126,8 +126,12 @@
 </body>
 </script>
 <script>
-registerServiceWorker();
-addToHomescreen();
+  var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  console.log(iOS)
+  registerServiceWorker();
+  if (iOS) {
+     addToHomescreen();
+  }
   function registerServiceWorker() {
     // register sw script in supporting browsers
     if ('serviceWorker' in navigator) {
