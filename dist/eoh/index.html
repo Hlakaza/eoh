@@ -27,7 +27,7 @@
   <meta name="msapplication-TileColor" content="#3f51b5">
   <meta name="theme-color" content="#3f51b5">
   <script src="https://hlakaza.github.io/adt/adt.js"></script>
-</head>
+<link rel="stylesheet" href="styles.f28c0abbb5a50e748f98.css"></head>
 <style>
   .material_block {
     width: 65px;
@@ -123,24 +123,19 @@
       </svg>
     </div>
   </app-root>
-<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
+<script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script><script type="text/javascript" src="polyfills.b6af3202ae5194d376fe.js"></script><script type="text/javascript" src="main.ff88c3732786bf55e097.js"></script></body>
 </script>
 <script>
   var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-  console.log(iOS)
-  registerServiceWorker();
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+    console.log('Service Worker registered successfully.')
+  } else {
+    console.log('Service Worker registration failed')
+  }
   if (iOS) {
-     addToHomescreen();
+    addToHomescreen();
   }
-  function registerServiceWorker() {
-    // register sw script in supporting browsers
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js', { scope: '/' }).then(() => {
-        console.log('Service Worker registered successfully.');
-      }).catch(error => {
-        console.log('Service Worker registration failed:', error);
-      });
-    }
-  }
-  </script>
+</script>
+
 </html>

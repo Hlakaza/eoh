@@ -127,20 +127,15 @@
 </script>
 <script>
   var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-  console.log(iOS)
-  registerServiceWorker();
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+    console.log('Service Worker registered successfully.')
+  } else {
+    console.log('Service Worker registration failed')
+  }
   if (iOS) {
-     addToHomescreen();
+    addToHomescreen();
   }
-  function registerServiceWorker() {
-    // register sw script in supporting browsers
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js', { scope: '/' }).then(() => {
-        console.log('Service Worker registered successfully.');
-      }).catch(error => {
-        console.log('Service Worker registration failed:', error);
-      });
-    }
-  }
-  </script>
+</script>
+
 </html>
