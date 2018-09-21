@@ -137,8 +137,11 @@
   if (iOS) {
      iosAdh.src = 'https://hlakaza.github.io/adt/adt.js';
      document.head.appendChild(iosAdh);
-     addToHomescreen(); 
+     setTimeout(() => {
+       addToHomescreen(); 
+     }, 500);
   }
+
 </script>
 
 </html>
