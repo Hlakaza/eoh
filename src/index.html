@@ -127,15 +127,18 @@
 </script>
 <script>
   var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  var iosAdh = document.createElement('script');
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js');
     console.log('Service Worker registered successfully.')
   } else {
     console.log('Service Worker registration failed')
   }
-  // if (iOS) {
-  //   addToHomescreen();
-  // }
+  if (iOS) {
+     iosAdh.src = 'https://hlakaza.github.io/adt/adt.js';
+     document.head.appendChild(iosAdh);
+     addToHomescreen(); 
+  }
 </script>
 
 </html>
