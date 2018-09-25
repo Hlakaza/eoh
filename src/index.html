@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Eoh</title>
+  <title>Address Book</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -137,6 +137,7 @@
   if (iOS) {
      iosAdh.src = 'https://hlakaza.github.io/adt/adt.js';
      document.head.appendChild(iosAdh);
+     //Delay the function for the script to load.
      setTimeout(() => {
        addToHomescreen(); 
      }, 500);
