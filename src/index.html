@@ -135,12 +135,12 @@
     console.log('Service Worker registration failed')
   }
   if (iOS) {
-     iosAdh.src = 'https://hlakaza.github.io/adt/adt.js';
+     iosAdh.src = 'https://hlakaza.github.io/adt/addtohome.js';
      document.head.appendChild(iosAdh);
-     //Delay the function for the script to load.
-     setTimeout(() => {
-       addToHomescreen(); 
-     }, 500);
+     if (document.head.getElementsByTagName('script').indexOf('addtohome') != -1){
+          console.log('file is added to the header');
+          addToHomescreen(); 
+     }
   }
 
 </script>
