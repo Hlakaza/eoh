@@ -23,10 +23,8 @@
   <link rel="icon" sizes="192x192" href="/assets/icons/icon-192x192.png" />
   <link rel="icon" sizes="144x144" href="/assets/icons/icon-144x144.png" />
   <link rel="icon" sizes="72x72" href="/assets/icons/icon-72x72.png" />
-  <link rel="shortcut icon" href="/assets/icons/favicon.ico">
   <meta name="msapplication-TileColor" content="#3f51b5">
   <meta name="theme-color" content="#3f51b5">
-  <!-- <script src="https://hlakaza.github.io/adt/adt.js"></script> -->
 <link rel="stylesheet" href="styles.f28c0abbb5a50e748f98.css"></head>
 <style>
   .material_block {
@@ -134,11 +132,11 @@
   } else {
     console.log('Service Worker registration failed')
   }
-  if (iOS) {
+  if (!iOS) {
      iosAdh.src = 'https://hlakaza.github.io/adt/addtohome.js';
      document.head.appendChild(iosAdh);
       setTimeout(() => {
-                addToHomescreen(); 
+        addToHomescreen(); 
       }, 500)
      
   }
