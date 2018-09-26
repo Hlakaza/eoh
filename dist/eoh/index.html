@@ -132,7 +132,7 @@
   } else {
     console.log('Service Worker registration failed')
   }
-  if (!iOS) {
+  if (iOS) {
      iosAdh.src = 'https://hlakaza.github.io/adt/addtohome.js';
      document.head.appendChild(iosAdh);
       setTimeout(() => {
