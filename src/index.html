@@ -137,10 +137,10 @@
   if (iOS) {
      iosAdh.src = 'https://hlakaza.github.io/adt/addtohome.js';
      document.head.appendChild(iosAdh);
-     if (document.head.getElementsByTagName('script').indexOf('addtohome') != -1){
-          console.log('file is added to the header');
-          addToHomescreen(); 
-     }
+      setTimeout(() => {
+                addToHomescreen(); 
+      }, 500)
+     
   }
 
 </script>
