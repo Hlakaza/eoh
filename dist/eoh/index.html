@@ -124,7 +124,8 @@
 <script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script><script type="text/javascript" src="polyfills.b6af3202ae5194d376fe.js"></script><script type="text/javascript" src="main.ff88c3732786bf55e097.js"></script></body>
 </script>
 <script>
-  var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  // var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  var iOS = !!navigator.platform.match(/iPhone|iPod|iPad/);
   var iosAdh = document.createElement('script');
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js');
